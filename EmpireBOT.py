@@ -37,6 +37,8 @@ async def get_online(ctx, port, server):
     string = "\n"
     players_server = []
     reader, writer = await asyncio.open_connection(host='mc.dreamfinity.org', port=port)
+    print(type(package_1, package_2)
+    print(package_1, package_2)
     writer.write(package_1)
     writer.write(package_2)
     while not info:
