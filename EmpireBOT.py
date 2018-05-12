@@ -27,8 +27,8 @@ PORT_arcane = environ.get('PORT_arcane', None)
 PORT_techno = environ.get('PORT_techno', None)
 PORT_magic = environ.get('PORT_magic', None)
 PORT_space = environ.get('PORT_space', None)
-package_1 = environ.get('package_1', None)
-package_2 = environ.get('package_2', None)
+package_1 = b'\x18\x00\x05\x12\x6d\x63\x2e\x64\x72\x65\x61\x6d\x66\x69\x6e\x69\x74\x79\x2e\x6f\x72\x67\x65\x90\x01'
+package_2 = b'\x01\x00'
 Client = discord.Client()
 
 
@@ -37,8 +37,6 @@ async def get_online(ctx, port, server):
     string = "\n"
     players_server = []
     reader, writer = await asyncio.open_connection(host='mc.dreamfinity.org', port=port)
-    print(type(package_1))
-    print(type(package_2))
     writer.write(package_1)
     writer.write(package_2)
     while not info:
